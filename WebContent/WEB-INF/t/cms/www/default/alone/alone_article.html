@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>${channel.title!channel.name} - ${site.name}</title>
+<meta http-equiv="keywords" content="${channel.keywords!}"/>
+<meta http-equiv="description" content="${channel.description!}"/>
+
+<link href="/${res}/krd/css/index.css" rel="stylesheet" type="text/css">
+<script src="/${res}/krd/js/jquery.min.17.js"></script>
+<script type="text/javascript" src="/${res}/krd/js/index.js"></script>
+<script src="/${res}/krd/js/join-stop1.js" type="text/javascript"></script>
+</head>
+
+<body>
+<script type="text/javascript" src="/${res}/krd/js/menu.js"></script> 
+[#include "../include/head2.html"/]
+<div class="clear"></div>
+<div class="banner"> <img src="/${res}/krd/images/about_banner.png"> </div>
+<div class="Cmain">
+  <div class="Cmain_left">
+    <div class="columns_title">
+      <div class="name"> <span>A</span> bout Us
+        
+      </div>
+    </div>
+    <div class="columns">
+      <ul>
+        
+        [@cms_channel_list parentId=70]    
+		[#list tag_list as c1]    
+        [#if c1.name=channel.name]
+        	<li class="act"><a href="${c1.url}" class='act'>${c1.name}</a></li>
+        [#else]
+            <li class="thisclass"><a href="${c1.url}">${c1.name}</a></li>
+        [/#if] 
+		[/#list]    
+		[/@cms_channel_list]   
+        
+      </ul>
+    </div>
+  </div>
+ <!--enf Cmain_left-->
+  <div class="Cmain_right">
+    <h1> About Us&nbsp;&nbsp;<span>${channel.name}</span></h1>
+    <i class="boder_left"></i><i class="boder_right"></i>
+    <div class="font_left">
+      <p class="title">${channel.txt!}</p> 
+    </div>
+    <div class="clear"></div>
+    
+    <!--end img_box2--> 
+  </div>
+  <!--end Cmain_right--> 
+</div>
+<div class="clear"></div>
+
+[#include "../include/footer.html"/]
+<div id="scrolltop" class="scrolltop" style="top: 806px;"><a href="javascript:void(0);"><img src="/${res}/krd/images/top.png" class="png"></a></div>
+<script type="text/javascript" src="/${res}/krd/js/scroll.js"></script> 
+</body>
+</html>

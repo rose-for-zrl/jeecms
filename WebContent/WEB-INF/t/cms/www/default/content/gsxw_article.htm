@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>${channel.title!channel.name} - ${site.name}</title>
+<meta name="keywords" content="${channel.keywords!}" />
+<meta name="description" content="${channel.description!}" />
+<link rel="shortcut icon" href="/${res}/krd/images/logo123.jpg"	type="image/x-icon">
+<link href="/${res}/krd/css/Component.css" rel="stylesheet"	type="text/css" media="all">
+<link href="/${res}/krd/css/frame.css" rel="stylesheet"	type="text/css" media="all">
+<script src="/${res}/krd/js/jquery.min.17.js"></script>
+<script src="${resSys}/jqueryUI/jquery-ui.js" type="text/javascript"></script> 
+<script src="${resSys}/front.js" type="text/javascript"></script> 
+<script type="text/javascript">   
+$(function() {
+Cms.checkPerm("${base}","${content.id}");   
+Cms.collectCsi("${base}","collectCsiDiv","collect_csi","${content.id}");   
+Cms.attachment("${base}","${content.id}","${content.attachments?size}","attach");   
+Cms.viewCount("${base}","${content.id}");   
+Cms.siteFlow("${base}", location.href, document.referrer,"${site.config.flowSwitch?string}");   
+});   
+</script>   
+
+</head>
+
+<body repaint="true">
+	<div id="CBody" class="wraper">
+
+		[#include "../include/head.html"/]
+		
+		<div style="width: 960px;" class="wrap960">
+			<div style="width: 960px; height: 160px;" class="gwbanner">
+				<div class="banner">
+					<img src="/${res}/krd/images/banner_ds1_gywm.jpg">
+				</div>
+			</div>
+			<div style="width: 960px;" class="wrap960">
+				<div style="width: 235px; float: left;" class="marginr10">
+					<div style="width: 235px;" class="marginb102">
+						<div class="sidebar">
+							<h1 class="text">${channel.name}</h1>
+						</div>
+						<div class="subnav" style="border-bottom: 0px solid #93d3d8;">
+							[@cms_channel_list parentId=310]    
+				            [#list tag_list as c1]    
+				            <dl class="">
+								<dt>
+									<a href="${c1.url}">${c1.name}</a><span></span>
+								</dt>
+							</dl>
+				            [/#list]    
+				            [/@cms_channel_list]
+							            
+							<script type="text/javascript">
+									$(function(){
+										$(".subnav2 dl").click(function(){
+											$(this).addClass("on").siblings().removeClass("on");
+										})
+									})
+									$(function(){
+										$(".subnav dl").click(function(){
+											$(this).addClass("on").siblings().removeClass("on");
+										})
+									})
+						     </script>
+						</div>
+					</div>
+					<div style="width:233px;height:327px;" class="marginb10">
+						<div class="lxwmad">
+							<img src="/${res}/krd/images/ffad291a-3184-4f7b-b3b9-74b2035dbfe5.jpg">
+						</div>
+					</div>
+				</div>
+				<div style="width: 715px; float: left;" class="marginb102">
+					<div objid="6009" class="rightarea">
+						<div objid="6010" class="crumb">
+							<span objid="6079"
+								objparam="notnavcount:0,splitstr:&gt;style:null"
+								tag="_currentplace"> <a href="${base}/">首页</a>&gt;&gt;<a
+								href="">${channel.name}</a>
+							</span>
+						</div>
+						<div class="tcon">
+							<div objid="6011" class="txtcon">
+								<div objid="6014" class="cont" style="text-align: center;">
+									<h1>${content.title}</h1>
+									<br>
+										<h2>作者： ${content.author!'蜀能公司'}&nbsp;&nbsp;
+										${content.releaseDate?string("yyyy-MM-dd")}</h2>
+										<br/>
+									<p>${txt!}</p>
+								</div>
+							</div>
+						</div>
+						<div style="margin-bottom:10px;">
+							<center class="noprint">
+								<input value="打印" type="button" class="addbtnh" onclick="preview('');" id="print">
+								<input type="button" onclick="window.close()" value="关闭" class="addbtnh">
+							</center>
+						</div>
+						<style>
+							@media print {
+								.noprint {display:none}
+							}
+						</style>
+						<script type="text/javascript">
+						       function preview(id){
+						           var sprnhtml=$('#'+id).html();   //获取区域内容
+						           var selfhtml=$('body').html(); //获取当前页的html
+						           $('body').html(sprnhtml);
+						           window.print();
+						           $('body').html(selfhtml);
+						       }
+						</script>
+					</div>
+				</div>
+			</div>
+		</div>
+		[#include "../include/footer.html"/]
+</body>
+
+</html>

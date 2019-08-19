@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>${channel.title!channel.name} - ${site.name}</title>
+<meta name="keywords" content="${channel.keywords!}" />
+<meta name="description" content="${channel.description!}" />
+<link rel="shortcut icon" href="/${res}/krd/images/logo123.jpg" type="image/x-icon">
+<link href="/${res}/krd/css/Component.css" rel="stylesheet" type="text/css" media="all">
+<link href="/${res}/krd/css/frame.css" rel="stylesheet" type="text/css" media="all">
+<script src="/${res}/krd/js/jquery.min.17.js"></script>
+<!--引用百度地图API-->
+<style type="text/css">
+html,body{margin:0;padding:0;}
+.iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+.iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</head>
+
+<body repaint="true">
+	<div id="CBody" class="wraper">
+	
+	[#include "../include/head.html"/]
+	<script>
+			$(function(){
+				$(".nav ul li").addClass(".on");
+			})
+		</script>
+	<div style="width:960px;" class="wrap960">
+			<div style="width:960px;height:160px;float:left;" class="gwbanner">
+				<div class="banner">
+					<img src="/${res}/krd/images/banner_ds1_lxwm.jpg">
+				</div>
+			</div>
+			<div style="width:960px;float:left;" class="wrap960">
+				<div style="width:235px;float:left;" class="marginr10">
+					<div style="width:235px;" class="marginb102">
+						<div class="sidebar">
+							<h1 class="text">
+								${channel.name}
+							</h1>
+						</div>
+						<div class="subnav" style="border-bottom: 0px solid #93d3d8;">
+							  
+				           [@cms_channel_list parentId=170]    
+				            [#list tag_list as c1]    
+				            <dl class="">
+								<dt>
+									<a href="${c1.url}">${c1.name}</a><span></span>
+								</dt>
+							</dl>
+				            [/#list]    
+				            [/@cms_channel_list]
+				            
+							            
+							<script type="text/javascript">
+									$(function(){
+										$(".subnav2 dl").click(function(){
+											$(this).addClass("on").siblings().removeClass("on");
+										})
+									})
+									$(function(){
+										$(".subnav dl").click(function(){
+											$(this).addClass("on").siblings().removeClass("on");
+										})
+									})
+						     </script>
+						</div>
+					</div>
+					
+					<div style="width:233px;height:327px;" class="marginb10">
+						<div class="lxwmad">
+							<img src="/${res}/krd/images/ffad291a-3184-4f7b-b3b9-74b2035dbfe5.jpg">
+						</div>
+					</div>
+				</div>
+				<div style="width:713px;height:auto;float:left;" class="marginb10">
+					<div class="lxwm">
+						<div class="title">
+							<h3>${channel.name}</h3>
+						</div>
+						<div class="lxwmlist">
+							${channel.txt!}
+						</div>
+						<!--百度地图容器-->
+						<div style="text-align: center;">
+							<iframe width="604" height="720" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://j.map.baidu.com/s/6t2IFb"></iframe>
+						</div>
+						<br />
+						<br />
+					</div>
+				</div>
+			</div>
+		</div>
+
+	[#include "../include/footer.html"/]
+	
+</body>
+
+</html>

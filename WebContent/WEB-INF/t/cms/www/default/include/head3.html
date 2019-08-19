@@ -1,0 +1,37 @@
+<script language="javascript" src="/${res}/krd/js/zh.js"></script>
+<link href="/${res}/krd/css/index.css" rel="stylesheet" type="text/css">
+
+<div class="top_main">
+	<div class="warp2">
+		<div class="header-top">
+			<ul>
+				<li>欢迎来到蜀能电力！&nbsp</li>
+				<li><a href="#">网站声明</a>&nbsp|</li>
+				<li>&nbsp<a href="">联系我们</a></li>
+			</ul>
+		</div>
+		<div class="logo"><img src="/${res}/krd/images/logo.jpg"></div>
+		<div id="nav" style="background:url(/${res}/krd/images/20190621105715.jpg) no-repeat">
+			<ul>
+				<li class=""><a href="${site.url!}">首页</a></li>  
+				[@cms_channel_list ]
+				[#list tag_list as c]
+				<li>
+					<a href="#">${c.name}</a>
+				</li>
+				[/#list]
+				[/@cms_channel_list]
+			</ul>
+			<div class="searchCon">
+				<form action="${base}/search.jspx" target="_blank" id="searchForm">
+	                <table width="110">
+							          <tr>
+	                      <td><input name="q" value="${oldq!'请输入关键词'}" type="text" onfocus="if(this.value=='请输入关键词')this.value=''"  onkeypress="qkeypress()" onblur="if(this.value=='')this.value='请输入关键词'"  maxlength="50" autocomplete="off" ></td>
+	                       <td><input type="hidden" name="token" value="${token!}"><input type="submit" class="searchMenu" value=""/ ></td>
+	                    </tr>
+	                </table>
+	           	</form>
+           </div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>全文检索列表 - ${site.name}</title>
+
+
+<link href="/${res}/krd/css/index.css" rel="stylesheet" type="text/css">
+<script src="/${res}/krd/js/jquery.min.17.js"></script>
+<script type="text/javascript" src="/${res}/krd/js/index.js"></script>
+<script src="/${res}/krd/js/join-stop1.js" type="text/javascript"></script>
+</head>
+
+<body>
+<script type="text/javascript" src="/${res}/krd/js/menu.js"></script> 
+[#include "../include/head3.html"/]
+<div class="clear"></div>
+<div class="banner"> <img src="/${res}/krd/images/news.gif"> </div>
+<div class="Cmain">
+  <div class="Cmain_left">
+    <div class="columns_title">
+      <div class="name"> <span>S</span> earch
+        
+      </div>
+    </div>
+    <div class="columns">
+      <ul>
+      </ul>
+    </div>
+  </div>
+  <!--enf Cmain_left-->
+  <div class="Cmain_right">
+    <h1> 站内搜索【${input!}】的结果</h1>
+    <i class="boder_left1"></i><i class="boder_right1"></i>
+    <div class="font_left3">
+      <ul class="u_01">
+      	抱歉，您输入的内容"${q!}"不在查询范围内。
+      </ul>
+      <br/>
+
+    </div>
+    <div class="clear"></div>
+    
+    <!--end img_box2--> 
+  </div>
+  <!--end Cmain_right--> 
+</div>
+<div class="clear"></div>
+[#include "../include/footer.html"/]
+<div id="scrolltop" class="scrolltop" style="top: 1406px;"><a href="javascript:void(0);"><img src="/${res}/krd/images/top.png" class="png"></a></div>
+<script type="text/javascript" src="/${res}/krd/js/scroll.js"></script> 
+<!-- 站长统计 -->
+
+</body>
+</html>

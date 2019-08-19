@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>jeecms-left</title>
+<#include "/jeecms_sys/head.html"/>
+<script type="text/javascript">
+$(function() {
+	$("li").each(function(i){
+		$(this).removeClass();
+		if(i==0){
+			$(this).addClass("leftCurr");
+		}else{
+			$(this).addClass("leftNol");
+		}
+		$(this).click( function () {
+			$("li").each(function(){
+				$(this).removeClass();
+				$(this).addClass("leftNol");
+			});
+			$("h3").each(function(){
+				$(this).next().hide();
+				$(this).removeClass();
+				$(this).addClass("leftNol");
+			});
+			$(this).removeClass();
+			$(this).addClass("leftCurr");
+		});
+	});
+	$("h3").each(function(){
+		$(this).next().hide();
+		$(this).addClass("leftNol");
+		$(this).click( function () {
+			$("h3").each(function(){
+				$(this).next().hide();
+				$(this).removeClass();
+				$(this).addClass("leftNol");
+			});
+			$("li").each(function(){
+				$(this).removeClass();
+				$(this).addClass("leftNol");
+			});
+			$(this).removeClass();
+			$(this).addClass("leftCurr");
+		    $(this).next().show(); 
+		});
+	});
+	$("div div div").each(function(i){
+		$(this).click( function () {
+			$("div div div").each(function(){
+				$(this).removeClass();
+				$(this).addClass("leftmenuBG");
+			});
+			$(this).removeClass();
+			$(this).addClass("leftmenuBGCurr");
+		});
+	});
+});
+</script>
+<style>
+h3{ padding:0; margin:0; font-weight:normal; font-size:12px;}
+</style>
+</head>
+<body class="lbody">
+<div class="left">
+	<#include "/jeecms_sys/date.html"/>
+     <ul class="w-lful">
+
+		<@cms_perm url="/comment@/vote_topic@/guestbook@/guestbook_ctg@/jobapply">
+		<h3><@s.m 'cmsInteractive.function'/></h3>
+		</@cms_perm>
+		<div style="margin:0; padding:0;">
+			<@cms_perm url="/guestbook/v_list.do">
+			<div class="leftmenuBG"><a href="../guestbook/v_list.do" target="rightFrame"><@s.m "cmsGuestbook.function"/></a></div>
+			</@cms_perm>
+			<@cms_perm url="/guestbook_ctg/v_list.do">
+			<div class="leftmenuBG"><a href="../guestbook_ctg/v_list.do" target="rightFrame"><@s.m "cmsGuestbookCtg.function"/></a></div>
+			</@cms_perm>
+		</div>
+
+	
+		<@cms_perm url="/workflow/v_list.do">
+			<li><a href="../workflow/v_list.do" target="rightFrame"><@s.m "cms.workflow.function"/></a></li>
+		</@cms_perm>
+		<@cms_perm url="/friendlink/v_list.do">
+			<li><a href="../friendlink/v_list.do" target="rightFrame"><@s.m "cmsFriendlink.function"/></a></li>
+		</@cms_perm>
+
+
+
+		<@cms_perm url="/content_cycle/v_list.do">
+			<li><a href="../content_cycle/v_list.do" target="rightFrame"><@s.m "contentCycle.function"/></a></li>
+		</@cms_perm>
+		
+     </ul>
+     		<@cms_perm url="/static">
+		<h3><@s.m 'cmsStatic.function'/></h3>
+		</@cms_perm>
+		<div style="margin:0; padding:0;">
+			<@cms_perm url="/static/v_index.do">
+			<div class="leftmenuBG"><a href="../static/v_index.do" target="rightFrame"><@s.m "cmsStatic.index"/></a></div>
+			</@cms_perm>
+			<@cms_perm url="/static/v_channel.do">
+			<div class="leftmenuBG"><a href="../static/v_channel.do" target="rightFrame"><@s.m "cmsStatic.channel"/></a></div>
+			</@cms_perm>
+			<@cms_perm url="/static/v_content.do">
+			<div class="leftmenuBG"><a href="../static/v_content.do" target="rightFrame"><@s.m "cmsStatic.content"/></a></div>
+			</@cms_perm>
+			<@cms_perm url="/static/v_reset_generate.do">
+			<div class="leftmenuBG"><a href="../static/v_reset_generate.do" target="rightFrame"><@s.m "cmsContent.regenerate"/></a></div>
+			</@cms_perm>
+		</div>
+
+			
+</div>
+</body>
+</html>

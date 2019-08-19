@@ -1,0 +1,65 @@
+@charset "utf-8";
+body{background:#fff url(../images/body.jpg) repeat-x;margin:0;padding:0;font:12px/150% Arial,\5b8b\4f53,Helvetica, sans-serif;color:#545454;text-align:justify;text-justify:inter-ideograph;}
+div,form,img,ul,ol,li,dl,dt,dd,p,input,select,textarea{margin:0;padding:0;font-size:12px;}
+ul,ol,dl,li{list-style:none;}
+h1,h2,h3,h4,h5,h6{margin:0;padding:0;font-size:12px;}
+/*table{border-spacing:0;border-collapse:collapse;}*/
+
+/* em,cite,i{font-style:normal;} */
+cite,i{font-style:normal;}
+
+img{border:0;vertical-align:top;}
+a:link,a:visited{color:#545454;text-decoration:none;}
+a:hover{color:#F80000;text-decoration:underline;}
+.clearfix:after{content: ".";display:block;height:0;clear:both;visibility:hidden;}
+* html>body .clearfix{display:inline-block;width:100%;}
+* html .clearfix{height:1%;/* End hide from IE-mac */}
+.overflow{overflow:auto;zoom:1;/* IE7 */}
+.hide{display:none;}
+.fl{float:left;}
+.fr{float:right;}
+/*框架的样式*/
+.wraper{background:#fff;width:960px;margin:0 auto;padding:0 15px;}
+.header{background:#04564a;width:960px;margin-bottom:10px;overflow:hidden;}
+.header2{background:#04564a;width:960px;margin-bottom:10px;}
+.wrap960{width:960px;overflow:hidden;display:block;}
+/* .wrap960{width:960px;margin:0 auto;overflow:hidden;display:block;} */
+.wrap960:after{content:'[DO NOT LEAVE IT IS NOT REAL]';display:block; height:0;clear:both;visibility:hidden;} 
+/*首页banner*/
+.indexbanner{width:100%;margin-bottom:10px;overflow:hidden;}
+.indexbanner img{width:100%;height:320px;display:block;}
+/*banner*/
+.gwbanner{width:100%;margin-bottom:10px;overflow:hidden;clear:both;}
+.gwbanner img{width:960px;height:160px;display:block;}
+/*新闻中心中间banner*/
+.ad{width:100%;margin-bottom:10px;overflow:hidden;clear:both;}
+.ad img{width:960px;height:90px;display:block;}
+/*电子商务*/
+.dzsw240{width:100%;border:1px solid #93d3d8;margin-bottom:10px;overflow:hidden;}
+.dzsw240 img{width:210px;height:175px;margin-right:20px;}
+.dzsw240 .zjlmrd .item .cont{padding:13px 20px;overflow:hidden;}
+.marginr10{margin-right:10px;overflow:hidden;}
+.margin102{border:1px solid #93d3d8;overflow:hidden;}
+.marginb10{margin-bottom:10px;border:1px solid #93d3d8;overflow:hidden;}
+.marginb102{margin-bottom:10px;overflow:hidden;}
+.overflowh{overflow:hidden;}
+/*总部动态*/
+.zbdt300{width:100%;border:1px solid #93d3d8;margin-bottom:10px;overflow:hidden;}
+.zbdt300 img{width:80px;height:60px;background:#fff;padding:2px;border:1px solid #227b83;margin-right:10px;}
+/*公司简介*/
+.gsjj200{width:100%;border:1px solid #93d3d8;margin-bottom:10px;overflow:hidden;}
+.gsjj200 img{width:190px;height:100px;margin-right:20px;display:block;}
+/*公司简介*/
+.gsjjadd{width:100%;border:1px solid #93d3d8;margin-bottom:10px;overflow:hidden;}
+.gsjjadd img{width:230px;height:140px;text-align:center;padding:0 120px;margin-bottom:20px;display:block;}
+/*公司宣传片有边距图片样式*/
+.pic210{width:100%;border:1px solid #93d3d8;overflow:hidden;}
+.pic210 img{width:210px;height:175px;padding:10px;display:block;}
+/*公司宣传片有间距*/
+.pic233{width:100%;border:1px solid #93d3d8;margin-bottom:10px;overflow:hidden;}
+.pic233 img{width:233px;height:200px;display:block;}
+/*公司理念*/
+.gsln200{width:100%;border:1px solid #93d3d8;margin-bottom:10px;overflow:hidden;}
+.gsln200 img{width:132px;height:90px;margin-right:20px;display:block;}
+
+

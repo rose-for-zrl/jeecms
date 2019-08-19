@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>用户留言 - ${site.name}</title>
+<meta name="keywords" content="用户留言" />
+<meta name="description" content="用户留言" />
+
+<link href="/${res}/krd/css/index.css" rel="stylesheet" type="text/css">
+<script src="${resSys}/jquery.js" type="text/javascript"></script>
+<script src="${resSys}/jqueryUI/jquery-ui.js" type="text/javascript"></script>
+<script src="${resSys}/front.js" type="text/javascript"></script>
+
+
+<script type="text/javascript" language="javascript">   
+//验证码    
+function changeAuthCode() {    
+    var num =     new Date().getTime();   
+    var rand = Math.round(Math.random() * 10000);   
+    num = num + rand;   
+    $('#ver_code').css('visibility','visible');   
+    if ($("#vdimgck")[0]) {   
+        $("#vdimgck")[0].src = "/include/vdimgck.php?tag=" + num;   
+    }   
+    return false;       
+}   
+</script> 
+</head>
+
+
+<body>
+<script type="text/javascript" src="/${res}/krd/js/menu.js"></script> 
+[#include "../include/head3.html"/]
+<div class="clear"></div>
+<div class="banner"> <img src="/${res}/krd/images/20144231642396977.gif"> </div>
+<div class="Cmain">
+  <div class="Cmain_left">
+    <div class="columns_title">
+      <div class="name"> <span>C</span> ontact Us
+        
+      </div>
+    </div>
+    <div class="columns">
+      <ul>
+        [@cms_channel_list parentId=75] 
+        [#list tag_list as c1]    
+        	<li class="act"><a href="${c1.url}" class='act'>${c1.name}</a></li>
+		[/#list]    
+		[/@cms_channel_list]  
+      </ul>
+    </div>
+  </div>
+  <!--enf Cmain_left-->
+  <div class="Cmain_right">
+    <h1> Contact Us&nbsp;&nbsp;<span>在线留言</span></h1>
+    <i class="boder_left"></i><i class="boder_right"></i>
+    <div class="font_left">
+    
+
+ 	<form id="guestbookForm" action="${base}/guestbook.jspx" method="post">
+    
+    <table width="640" border="0">
+
+        <tr>
+            <td width="15%" height="30" align="right">*留言标题：</td>
+            <td width="170" height="30"><input id="title" name="title" type="text" size="40" class="contactTex1" maxlength="255"/></td>
+            <td width="390" height="30"></td>
+        </tr>
+        <tr>        
+            <td width="15%" height="30" align="right">*您的姓名：</td>
+            <td width="170" height="30"><input id="email" type="text" name="email" class="contactTex1" maxlength="100"/></td>
+            <td width="390" height="30"></td>
+        </tr>
+        <tr>
+            <td width="15%" height="30" align="right">*联络电话：</td>
+            <td width="170" height="30"><input id="phone" type="text" name="phone" class="contactTex1" maxlength="50"/></td>
+            <td width="390" height="30"></td>
+        </tr>
+         <tr>
+         	<td width="15%" height="30" align="right">咨询公司：</td>
+            <td>
+            <select name="ctgId" class="contactTex1">
+            [@cms_guestbook_ctg_list siteId=site.id]
+            [#list tag_list as ctg]
+            <option value="${ctg.id}">${ctg.name}</option>
+            [/#list]
+            [/@cms_guestbook_ctg_list]
+            </select>	          
+            </td>
+        </tr> 
+        <tr>
+            <td width="15%" align="right" valign="top">*留言内容：</td>
+            <td width="560" colspan="2"><textarea id="content" name="content" class="cinput" cols="70" rows="5"></textarea></td>
+        </tr>
+        
+        <tr>
+           <td width="15%" height="30" align="right">*验证码：</td>
+            <td height="30" >
+            <div style="float:left; ">
+            <input type="text" name="captcha" class="plcode" maxlength="20" vld="{required:true}"/> 
+            <br />
+            </div>
+            <div style="float:left;">
+            <img id="guestbookCaptcha"  height="30" src="${base}/captcha.svl" onclick="this.src='${base}/captcha.svl?d='+new Date()"/>
+            </div>
+            </td>
+        </tr>
+        
+    	<input type="hidden" name="dede_fields" value="nicheng,text;dianhua,text;liuyan,multitext" />
+    	<input type="hidden" name="dede_fieldshash" value="199c7154a20bbaa32c561f0020771a48" />
+    
+        <tr>
+            <td width="80" height="40"></td>
+            <td width="190" height="40" colspan="2">
+            <input type="hidden" name="sessionId" id="sessionId" />
+            <input type="hidden" name="token" value="${token!}">
+            <input type="image" id="submit"  name="submit" value="留言" src="/${res}/krd/images/msg_submit.jpg"/>
+            <input type="button"  style="cursor:pointer; background:url(/${res}/krd/images/msg_reset.jpg) no-repeat; width:87px; height:30px; border:0" value=""  onclick="document.getElementById('guestbookForm').reset();" />
+            </td>
+        </tr>
+    </table>
+
+
+</form>
+            <script type="text/javascript">
+            $(function() {
+				
+            	$("#sessionId").val($.cookie("JSESSIONID"));
+	        	$("#submit").click(function () {
+					
+					if($('#title').val().length == 0)
+					{
+						alert("请填写留言标题");
+						return false;
+					}
+					else if($('#email').val().length == 0)
+					{
+						alert("请填写您的姓名");
+						return false;
+					}
+					else if($('#phone').val().length == 0)
+					{
+						alert("请填写联络电话");
+						return false;
+					}
+					else if($('#content').val().length == 0)
+					{
+						alert("请填写留言内容");
+						return false;
+					}
+					
+	                var options = {
+	                    url: 'guestbook.jspx',
+	                    type: 'post',
+	                    dataType: 'json',
+	                    data: $("#guestbookForm").serialize(),
+	                    success:  function (data) {
+		                	if(data.status==0) {
+			                    alert("留言成功");
+			                    location.href=location.href;
+			                } else if(data.status==1) {	
+			                    alert("验证码错误");
+			                    $("#guestbookCaptcha").click();
+			                }
+	                    }
+	                };
+	                $.ajax(options);
+	                return false;
+	            });
+            });
+            
+            </script> 
+
+    </div>
+    <div class="clear"></div>
+    
+    <!--end img_box2--> 
+  </div>
+  <!--end Cmain_right--> 
+  
+</div>
+<div class="clear"></div>
+[#include "../include/footer.html"/]
+<div id="scrolltop" class="scrolltop" style="top: 806px;"><a href="javascript:void(0);"><img src="/${res}/krd/images/top.png" class="png"></a></div>
+<script type="text/javascript" src="/${res}/krd/js/scroll.js"></script> 
+<!-- 站长统计 -->
+
+</body>
+
+</html>

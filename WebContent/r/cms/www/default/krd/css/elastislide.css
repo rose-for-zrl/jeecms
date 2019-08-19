@@ -1,0 +1,165 @@
+/* Elastislide Style */
+/*dede58.com  做最好的织梦模板*/
+.rg-thumbs{
+	width:620px
+}
+.es-carousel-wrapper {
+	background:#fff;
+    position: relative;
+}
+.es-carousel{
+	 margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 16px;
+    position: relative;
+    width:620px;
+}
+}
+.es-carousel ul{
+	display: none;
+}
+.es-carousel ul li{
+	float:left;
+	display:block;
+	 width:113px;
+	 height:86px;
+	 margin-right:10px;
+	 margin-top:15px;
+	
+}
+.es-carousel ul li a{
+	display:block;
+	border:3px #fff solid
+}
+.es-carousel ul li.selected a{
+	border-color:#526fed;
+	opacity:1.0;
+}
+.es-carousel ul li a img{
+	display:block;
+	border:none;
+	width:113px;
+	height:84px;
+}
+.es-nav span{
+	background: url("../images/index.png") repeat scroll 0 -312px rgba(0, 0, 0, 0);
+    cursor: pointer;
+    height: 12px;
+    left: 11px;
+    position: absolute;
+    text-indent: -9000px;
+    top: 50%;
+    width: 5px;
+
+}
+.es-nav span.es-nav-next{
+	background: url("../images/right_ico.gif") no-repeat scroll left top transparent;
+	right:10px;
+	left:auto;
+	background-position:top right;
+}
+.es-nav span:hover{
+	background: url("../images/left_ico1.gif") no-repeat scroll left top transparent;
+}
+.es-nav .right span:hover{
+	background: url("../images/right_ico1.gif") no-repeat scroll left top transparent;
+}
+.container{ background:#ebebeb}
+
+
+.rg-gallery{ margin-left:-20px}
+
+.rg-image-wrapper{
+	position:relative;
+}
+.rg-image{
+	position:relative;
+	text-align:center;
+	line-height:0px;
+}
+.rg-image img{
+	width:620px; 
+	height:430px;
+}
+.rg-image-nav a{
+	position:absolute;
+	top:180px;
+	left:30px;
+	background:url("../images/left_ico.png") no-repeat;
+	width:33px;
+	height:62px;
+	text-indent:-9000px;
+	cursor:pointer;
+	outline:none;
+	z-index:5
+}
+.rg-image-nav a.rg-image-nav-next{
+	right:10px;
+	left:auto;
+	background:url("../images/right_ico.png") no-repeat;
+	
+	
+}
+.rg-image-nav a:hover{
+	background:url("../images/left_ico.png") no-repeat;
+}
+.rg-image-nav .right a:hover{
+	background:url("../images/right_ico.png") no-repeat;
+}
+.rg-caption {
+	 bottom: 0;
+    color: #f1f3f5;
+    height: 46px;
+    line-height: 46px;
+	background:url("../images/iamges_bg.png");
+    position: absolute;
+    text-align: left;
+    width: 590px;
+	padding-left:30px;
+}
+
+
+.rg-caption p{
+	
+}
+.rg-view{
+	height:30px;
+	display:none
+}
+.rg-view a{
+	display:block;
+	float:right;
+	width:16px;
+	height:16px;
+	margin-right:3px;
+	background:#464646 url(../images/views.png) no-repeat top left;
+	border:3px solid #464646;
+	opacity:0.8;
+}
+.rg-view a:hover{
+	opacity:1.0;
+}
+.rg-view a.rg-view-full{
+	background-position:0px 0px;
+}
+.rg-view a.rg-view-selected{
+	background-color:#6f6f6f;
+	border-color:#6f6f6f;
+}
+.rg-view a.rg-view-thumbs{
+	background-position:0px -16px;
+}
+.rg-loading{
+	width:46px;
+	height:46px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	background:#000 url(../images/ajax-loader.gif) no-repeat center center;
+	margin:-23px 0px 0px -23px;
+	z-index:100;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	opacity:0.7;
+}
